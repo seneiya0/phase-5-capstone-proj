@@ -1,38 +1,180 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-name:link{
+  text-decoration: none;
+  color: white;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-name:visited{
+  text-decoration: none;
+  color: white;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.app-name:hover{
+  text-decoration: none;
+  color: white;
+}
+.app-name:active{
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.app-name{
+  background-color: black;
+  font-size: 8pt;
+  letter-spacing: 2px;
+  padding-left: 15px ;
+  padding-right: 15px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#navbar{
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(193, 226, 226);
+}
+.logged-in-nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  float: right;
+  margin-left: auto;
+  margin-right: 1%;
+  justify-content: right;
+  margin-top: 0pt;
+}
+
+.buttons{
+  margin-left: auto;
+}
+
+.user-icon{
+  object-fit: cover;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.user-nav{
+  margin-right: 8px;
+}
+
+.login-button{
+  font-size: 15px;
+}
+.posts{
+  display: flex;
+  flex-direction: column-reverse;
+  height: fit-content;
+  max-width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.post{
+  border-bottom: solid;
+  border-width: 0.5px;
+
+}
+
+.post-topic:link{
+  text-decoration: none;
+  color: black;
+}
+.post-topic:visited{
+  text-decoration: none;
+  color: black;
+}
+.post-topic:hover{
+  text-decoration: none;
+  color: black;
+}
+.post-topic:active{
+  text-decoration: none;
+  color: black;
+}
+
+.post-topic{
+  float: right;
+}
+
+li{
+  margin-top: 200px;
+  /* display: flex; */
+  display: inline;
+  margin-right: 8px;
+  word-wrap: break-word;
+}
+
+img{
+  margin-right: 10px;
+}
+
+.img-and-topics{
+  display: flex;
+  align-items: center;
+}
+
+.likes{
+  display: flex;
+  flex-direction: row;
+}
+
+.like-button{
+  background-color: transparent;
+  border: transparent;
+  font-size: 15px;
+}
+
+.liked-button{
+  background-color: transparent;
+  border: transparent;
+  color: rgb(48, 136, 143);
+  font-size: 15px;
+}
+
+.delete-button{
+  margin-left: auto;
+  font-size: 20px;
+  background-color: transparent;
+  border: transparent;
+}
+
+.home{
+  margin: right auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.topics{
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.topic-button{
+  text-align: center;
+  background-color: #242929;
+  padding: 10px;
+  color: white;
+  border-radius: 3px;
+  margin: 5px;
+  width: 60px;
+}
+.topic-button:link{
+  text-decoration: none;
+  color: white;
+}
+.topic-button:visited{
+  text-decoration: none;
+  color: white;
+}
+.topic-button:hover{
+  text-decoration: none;
+  color: white;
+}
+.topic-button:active{
+  text-decoration: none;
+  color: white;
 }
