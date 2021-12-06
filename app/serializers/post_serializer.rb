@@ -3,4 +3,5 @@ class PostSerializer < ActiveModel::Serializer
 
   belongs_to :user
   has_many :topics
+  has_many :comments
 end

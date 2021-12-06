@@ -43,13 +43,13 @@ function NavBar(props) {
   return (
     <header id="navbar">
       <NavLink to="/" exact className="app-name"> 
-          <h1> forum </h1>
+          <h1> SaidIt </h1>
       </NavLink>
 
     {currentUser !== null && (
       <div className="logged-in-nav">
         <div>
-          <p className='user-nav'><strong>{props.currentUser.username} </strong></p>
+          <p className='user-nav' style={{color:"black"}}><strong> {props.currentUser.username} </strong></p>
         </div>
         <a href="/my-profile"><img className="user-icon" src={props.currentUser.image} alt="icon" ></img> </a>
         <button
@@ -61,7 +61,6 @@ function NavBar(props) {
           className="login-button"
           onClick={logout}
           to="/"
-          exact
           style={linkStyles}
           > logout </NavLink>
       </div>
@@ -72,14 +71,12 @@ function NavBar(props) {
         <NavLink
             className="login-button"
             to="/login"
-            exact
             style={linkStyles}
         > Login </NavLink>
 
         <NavLink 
             className="signup-button"
             to="/signup"
-            exact
             style={linkStyles}
         > Signup </NavLink> 
       </div>)}

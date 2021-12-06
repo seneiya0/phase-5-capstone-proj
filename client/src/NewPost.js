@@ -63,7 +63,7 @@ function NewPost(props){
         />
           <textarea
             className="body-input"
-            placeholder="speak your mind :) "
+            placeholder=" "
             value={body}
             onChange={(e) => setBody(e.target.value)}
           />

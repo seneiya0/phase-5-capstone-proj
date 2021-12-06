@@ -30,7 +30,7 @@ function TopicPage(props){
       <NavBar currentUser={props.currentUser} />
       <h1> </h1>
       <div className='posts'>
-        {data.map( (d) => <Post post={d.post}/>)}
+        {data.map( (d) => <Post key={d.post.id} post={d.post} currentUser={props.currentUser}/>)}
       </div>
     </div>
   )

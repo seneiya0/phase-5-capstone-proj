@@ -40,9 +40,12 @@ class PostsController < ApplicationController
         render json: post, status: :accepted
     end
 
-    private
+    def post_comments
+        post = Post.find(params[:id])
+        render json: post.comments, status: :ok
+    end
 
-    
+    private
 
     def current_user
         User.find_by(username: params[:username])

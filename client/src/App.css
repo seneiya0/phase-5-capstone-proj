@@ -31,6 +31,7 @@
   display: flex;
   flex-direction: row;
   background-color: rgb(193, 226, 226);
+  width: 100%;
 }
 .logged-in-nav{
   display: flex;
@@ -95,6 +96,7 @@
 
 .post-topic{
   float: right;
+  position: relative;
 }
 
 li{
@@ -111,7 +113,7 @@ img{
 
 .img-and-topics{
   display: flex;
-  align-items: center;
+  align-items:  flex-end;
 }
 
 .likes{
@@ -177,4 +179,60 @@ img{
 .topic-button:active{
   text-decoration: none;
   color: white;
+}
+
+.user-name{
+  margin-bottom: -20px;
+}
+
+.body-and-topics{
+  display: flex;
+}
+
+.comments{
+  border-top: solid;
+  border-color: rgb(197, 197, 197);
+  border-width: 0.5px;
+}
+
+body{
+  background-color: rgba(221, 221, 221, 0.377);
+}
+
+.comment{
+  display: flex;
+
+  background-image: linear-gradient(#d8d8d82c, #fcfcfc0c);
+}
+
+.comment-user{
+  margin-right: 5px;
+}
+
+.addComment{
+  width:450px;
+  height: 80%;
+  border-radius: 0px;
+  border-color: transparent;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  overflow-wrap: break-word;
+}
+
+.new-comment-form{
+  display: flex;
+  flex-direction: row;
+}
+
+.create{
+  float: right;
+}
+
+.count{
+  float: right;
+}
+
+.add-comment-button{
+  text-align: center;
 }

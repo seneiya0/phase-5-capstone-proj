@@ -1,6 +1,7 @@
 import {MdDeleteForever} from 'react-icons/md'
 import {useState} from 'react'
 import {Link} from 'react-router-dom'
+import CommentsContainer from './CommentsContainer'
 
 function Post(props){
 
@@ -46,11 +47,17 @@ function handleDelete(){
 
   return(
     <div key={props.post.id} className='post' >
-    <h3 className='user-name'> {props.post.user.username} </h3>
+    <h4 className='user-name'> {props.post.user.username} </h4>
+    <h1> {props.post.title} </h1>
+    {props.post.image !== null ? 
     <div className='img-and-topics'>
-    <img src={props.post.image} style={{width: '400px'}} alt=''></img> { props.post.topics ? props.post.topics.map(topic => <li ><Link className = 'post-topic' to={`/topics/${topic.name}`}> {topic.name}  </Link> </li>) : null}
+    <img src={props.post.image} style={{width: '400px'}} alt=''></img> {props.post.topics ? props.post.topics.map(topic => <li key={topic.id}><Link className = 'post-topic' to={`/topics/${topic.name}`}> {topic.name} </Link> </li>) : null}
+    </div> : null}
+    {props.post.image === null ? 
+    <div className='body-and-topics'>
+    <p className='post-body' style={{width: '80%'}}> {props.post.body} </p> {props.post.topics ? props.post.topics.map(topic => <li key={topic.id} ><Link className = 'post-topic' to={`/topics/${topic.name}`}> {topic.name} </Link> </li>) : null} 
     </div>
-    <p className='post-body'> {props.post.body} </p><br/>
+    : <p className='post-body'> {props.post.body}  </p> }
     <p className='datetime'> {props.post.created_at.split("T")[0].split("-")[1]}/{props.post.created_at.split("T")[0].split("-")[2]}/{props.post.created_at.split("T")[0].split("-")[0]} </p>
     {props.currentUser && (
           <div className="likes">
@@ -62,6 +69,7 @@ function handleDelete(){
               
           </div>
           )}
+        <CommentsContainer id={props.post.id} currentUser={props.currentUser}/>
   </div>
   )
 }

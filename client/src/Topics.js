@@ -16,7 +16,7 @@ function Topics(){
   return(
     <div className='topics'>
     <h2>topics</h2>
-    {topics.map((topic) => <NavLink to={`/topics/${topic.name}`} className='topic-button'> {topic.name}</NavLink>)}
+    {topics.map((topic) => <NavLink to={`/topics/${topic.name}`}  key={topic.id} className='topic-button'> {topic.name}</NavLink>)}
     </div>
   )
 }

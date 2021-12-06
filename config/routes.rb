@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :comments
   resources :post_topics
   resources :posts
   resources :topics
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   post "/signup", to: "users#create"
   get "/users/:username", to: "users#user_info"
+  get "posts/:id/comments", to: "posts#post_comments"
 
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
