@@ -246,4 +246,108 @@ body{
 
 .delete-comment:hover{
   cursor: pointer;
+  animation:  shake 0.8s  ;
+}
+
+@keyframes shake{
+  0%{ 
+    transform: scale(110%); 
+    transform: translateX(0)
+  }
+  25%{
+    transform: translateX(5px);
+  }
+    
+  50%{
+    transform: translateX(-5px);
+  }
+  100%{
+    transform: translateX(0px);
+  }
+}
+
+.post-thing{
+  position: absolute;
+  left: 50%; 
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(193, 226, 226, 0.719);
+  padding: 40px;
+  border-radius: 50px;
+}
+.post-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+
+.body-input {
+  border: 1px transparent;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 15px 12px;
+  outline: none;
+  height: 200px;
+  width: 500px;
+}
+
+.post-button{
+  width: fit-content;
+  margin-left: auto;
+  border: transparent ;
+  border-radius: 15px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.post-button:enabled{
+  background-color: rgb(255, 255, 255);
+  color: 30, 0, 71;
+  cursor: pointer;
+}
+
+.overlay{
+  background-color: black;
+}
+
+.authForm{
+  display: table;
+}
+
+.login-form{
+  background-color: rgb(193, 226, 226);
+  width: 400px;
+  height: 400px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 30px;
+  left: 50%;
+  top:  50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.title-input{
+  border: transparent;
+  height: 25px;
+}
+
+.image-input{
+  border: transparent;
+  height: 25px;
+}
+
+.downvote{
+  background-color: transparent;
+  border: transparent;
+  font-size: 15px;
+}
+
+.downvoted{
+    background-color: transparent;
+    border: transparent;
+    font-size: 15px;
+    color: tomato;
 }

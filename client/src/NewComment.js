@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import { MdAddComment } from 'react-icons/md';
 import {AiOutlineEnter} from 'react-icons/ai'
+import {useEffect} from 'react'
 
 function NewComment(props){
   const [body, setBody] = useState("");
@@ -29,9 +30,23 @@ function NewComment(props){
     setBody("")
 }
 
+  useEffect(() => {
+    const handleEsc = (event) => {
+        if (event.keyCode === 27) {
+        setCommentButton(false)
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, []);
+
+
   return (
     <div>
-      { commentButton && (
+      {commentButton && (
       <div className='new-comment-form'>
         <form onSubmit={handleSubmit}>
           <input

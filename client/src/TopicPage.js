@@ -25,6 +25,8 @@ function TopicPage(props){
       })
   }, [id])
 
+  console.log(data)
+
   return(
     <div>
       <NavBar currentUser={props.currentUser} />

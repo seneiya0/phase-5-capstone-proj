@@ -32,7 +32,7 @@ function CommentsContainer(props){
         currentUser={props.currentUser}
         deleteComments={deleteComments}
       />)}
-      <NewComment addNewComment={addNewComment} id={props.id} currentUser={props.currentUser}/>
+      <NewComment addNewComment={addNewComment} id={props.id} currentUser={props.currentUser} />
     </div>
   )
 }

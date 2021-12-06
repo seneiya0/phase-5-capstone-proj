@@ -2,11 +2,12 @@ import {useState} from 'react'
 
 function NewPost(props){
 
+  console.log(props)
+
   const [image, setImage] = useState("");
   const [body, setBody] = useState("");
   const [error, setError] = useState('')
   const [title, setTitle] = useState("");
-  // const [topics, setTopics] = useState([])
 
   const newPost = {
     user_id: props.currentUser.id,
@@ -43,6 +44,7 @@ function NewPost(props){
   };
 
   return (
+    <div className='overlay'>
     <div className="post-thing">
       <h3 className="post-h">Create a new post:</h3>
       <div style={{color: "red"}}>{error}</div>
@@ -63,14 +65,15 @@ function NewPost(props){
         />
           <textarea
             className="body-input"
-            placeholder=" "
+            placeholder="Say it"
             value={body}
             onChange={(e) => setBody(e.target.value)}
           />
-        <div className="counter">
+        <div>
           <button disabled={!title || !body || body.length > 10000 } className="post-button" type="submit">Post</button>
         </div>
       </form>
+    </div>
     </div>
   );
 

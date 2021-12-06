@@ -42,7 +42,7 @@ function NavBar(props) {
 
   return (
     <header id="navbar">
-      <NavLink to="/" exact className="app-name"> 
+      <NavLink to="/" exact className="app-name" onClick={window.location.reload}> 
           <h1> SaidIt </h1>
       </NavLink>
 

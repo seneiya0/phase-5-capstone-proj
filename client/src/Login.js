@@ -33,6 +33,7 @@ function Login({ setCurrentUser }) {
 
 
     return (
+        <div className="back">
         <div className="authForm">
 
             <form onSubmit={handleSubmit} className="login-form">
@@ -70,6 +71,7 @@ function Login({ setCurrentUser }) {
         <button href="/signup" className="post-button"><Link to="/signup">Sign Up</Link></button>
         </form>
 
+    </div>
     </div>
     )
 }
