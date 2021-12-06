@@ -5,8 +5,6 @@ import NewComment from './NewComment'
 function CommentsContainer(props){
   const [comments, setComments] = useState([])
 
-  console.log(props.currentUser)
-
   useEffect(() => {
     fetch(`/posts/${props.id}/comments`)
     .then(r => r.json())
@@ -17,6 +15,10 @@ function CommentsContainer(props){
   setComments([...comments, comment])
   }
 
+  function deleteComments(id){
+    const updatedComments = comments.filter((comment) => comment.id !== id )
+    setComments(updatedComments)
+  }
 
   return (
     <div className="comments" >
@@ -27,6 +29,8 @@ function CommentsContainer(props){
         comment={comment}
         key={comment.id}
         id={comment.id}
+        currentUser={props.currentUser}
+        deleteComments={deleteComments}
       />)}
       <NewComment addNewComment={addNewComment} id={props.id} currentUser={props.currentUser}/>
     </div>

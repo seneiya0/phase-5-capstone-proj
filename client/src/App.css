@@ -236,3 +236,14 @@ body{
 .add-comment-button{
   text-align: center;
 }
+
+.delete-comment{
+  margin-left: auto;
+  background-color: transparent;
+  border: transparent;
+  font-size: 20px;
+}
+
+.delete-comment:hover{
+  cursor: pointer;
+}
