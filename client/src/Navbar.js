@@ -46,12 +46,12 @@ function NavBar(props) {
           <h1> SaidIt </h1>
       </NavLink>
 
-    {currentUser !== null && (
+    {currentUser && (
       <div className="logged-in-nav">
         <div>
-          <p className='user-nav' style={{color:"black"}}><strong> {props.currentUser.username} </strong></p>
+          <p className='user-nav' style={{color:"black"}}><strong> {currentUser.username} </strong></p>
         </div>
-        <a href="/my-profile"><img className="user-icon" src={props.currentUser.image} alt="icon" ></img> </a>
+        <a href="/my-profile"><img className="user-icon" src={currentUser.image} alt="icon" ></img> </a>
         <button
           className="login-button"
           style={linkStyles}

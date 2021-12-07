@@ -12,8 +12,10 @@ function Comment(props){
     <div className="comment">
       <p className="comment-user"><strong>{props.comment.user.username}</strong></p>
       <p> {props.comment.body} </p>
-      {props.currentUser.username === props.comment.user.username && (
-        <button className="delete-comment" onClick={handleDelete}> <TiDelete /> </button>
+      {props.currentUser && (
+        props.currentUser.username === props.comment.user.username && (
+        <button className="delete-comment" onClick={handleDelete}> <TiDelete /></button>
+        )
       )}
     </div>
   )

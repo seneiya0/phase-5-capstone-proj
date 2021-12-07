@@ -187,6 +187,7 @@ img{
 
 .body-and-topics{
   display: flex;
+  align-items: flex-start;
 }
 
 .comments{

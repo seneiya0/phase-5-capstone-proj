@@ -9,7 +9,7 @@ import TopicPage from './TopicPage';
 function App() {
 
   const [posts, setPosts] = useState([])
-  const [currentUser, setCurrentUser] = useState([])
+  const [currentUser, setCurrentUser] = useState(null)
 
   useEffect(() => {
     fetch("/posts")
