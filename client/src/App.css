@@ -20,8 +20,8 @@
   background-color: black;
   font-size: 8pt;
   letter-spacing: 2px;
-  padding-left: 15px ;
-  padding-right: 15px;
+  padding-left: 25px ;
+  padding-right: 25px;
   padding-top: 0px;
   padding-bottom: 0px;
 
@@ -187,6 +187,7 @@ img{
 
 .body-and-topics{
   display: flex;
+  flex-direction: row;
   align-items: flex-start;
 }
 
@@ -338,6 +339,7 @@ body{
 .image-input{
   border: transparent;
   height: 25px;
+  background-color: rgba(250, 250, 250, 0.712);
 }
 
 .downvote{
@@ -351,4 +353,50 @@ body{
     border: transparent;
     font-size: 15px;
     color: tomato;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:visited{
+  color: black;
+}
+
+.post-title{
+  overflow-wrap: break-word;
+}
+
+.img-and-name{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+.post-user-img{
+  margin-top: 18px;
+  border-radius: 40px;
+}
+
+.posts{
+  background-color: rgba(146, 146, 146, 0.11);
+  padding: 10px;
+}
+
+.home{
+  background-color: rgba(211, 211, 211, 0.425);
+}
+
+.add-topic-button{
+  border-color: transparent;
+  background-color: white;
+  padding: 5px;
+  margin: 4px;
+  border-radius: 15px;
+}
+
+.topic-buttons{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }

@@ -17,6 +17,11 @@ function Comment(props){
         <button className="delete-comment" onClick={handleDelete}> <TiDelete /></button>
         )
       )}
+      {props.currentUser && (
+        props.currentUser.username === 'admin' && (
+        <button className="delete-comment" onClick={handleDelete}> <TiDelete /></button>
+        )
+      )}
     </div>
   )
 }

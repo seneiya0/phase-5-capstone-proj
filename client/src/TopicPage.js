@@ -32,7 +32,7 @@ function TopicPage(props){
       <NavBar currentUser={props.currentUser} />
       <h1> </h1>
       <div className='posts'>
-        {data.map( (d) => <Post key={d.post.id} post={d.post} currentUser={props.currentUser}/>)}
+        { data ? data.map( (d) => <Post key={d.post_id} post={d.post} currentUser={props.currentUser}/> ) : null } 
       </div>
     </div>
   )

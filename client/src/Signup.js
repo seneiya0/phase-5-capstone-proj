@@ -8,6 +8,8 @@ function Signup({ setCurrentUser }) {
   const [image, setImage] = useState('')
   const  [error, setError] = useState('')
   
+  console.log()
+
   const handleSubmit = (event) => {
     event.preventDefault()
     fetch('/signup', {
@@ -77,10 +79,10 @@ function Signup({ setCurrentUser }) {
             onChange={(e) => setImage(e.target.value)}
           />
         </p>
-        
-        <div style={{color: "red"}}>{error}</div>
+        <div style={{color: "red"}}>{error[0]}</div>
+        <div style={{color: "red", marginBottom:'-9px'}}>{error[1]}</div>
         <p><button className="post-button" type="submit">Sign Up</button></p>
-        <p>-- or --</p>
+        <p style={{marginBottom:'2px'}}> already have an account? </p>
         <button href="/login" className="post-button"><Link to="/login">Log In</Link></button>
       </form>
     </div>

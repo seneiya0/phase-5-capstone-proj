@@ -32,10 +32,10 @@ function Login({ setCurrentUser }) {
     }
 
 
+
     return (
         <div className="back">
         <div className="authForm">
-
             <form onSubmit={handleSubmit} className="login-form">
                 <h1>Log In</h1>
                 <div style={{color: "red"}}>{error}</div>
@@ -66,11 +66,9 @@ function Login({ setCurrentUser }) {
             />
         </p>
         <p><button className="post-button" type="submit" >Log In</button></p>
-
         <p> Don't have an account ? </p>
         <button href="/signup" className="post-button"><Link to="/signup">Sign Up</Link></button>
         </form>
-
     </div>
     </div>
     )

@@ -1,21 +1,31 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
+import AddTopicButton from './AddTopicButton'
 
 function NewPost(props){
 
-  console.log(props)
-
-  const [image, setImage] = useState("");
-  const [body, setBody] = useState("");
+  const [image, setImage] = useState(null)
+  const [body, setBody] = useState("")
   const [error, setError] = useState('')
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState("")
+  const [topics, setTopics] = useState([])
+  const [postTopics, setPostTopics] = useState('')
+  const [addedTopics, setAddedTopics] = useState('')
+
 
   const newPost = {
     user_id: props.currentUser.id,
     title,
     image,
     body,
-    likes: 0
+    likes: 0,
+    postTopics
   }
+  
+  useEffect(() => {
+    fetch("/topics")
+      .then((r) => r.json())
+      .then((topics)=> setTopics(topics));
+  }, []);
 
   const configObj = {
     method: "POST",
@@ -43,6 +53,13 @@ function NewPost(props){
       })
   };
 
+  function handleTopicInput(topic){
+    setPostTopics((old) => old + ',' + topic.id)
+    setAddedTopics((n) => n + ',' + topic.name)
+  }
+
+  console.log(addedTopics)
+
   return (
     <div className='overlay'>
     <div className="post-thing">
@@ -52,14 +69,14 @@ function NewPost(props){
         <input 
           className="title-input"
           type="text"
-          placeholder="title"
+          placeholder="  title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
         <input
           className="image-input"
           type="text"
-          placeholder="image url"
+          placeholder="  image url"
           value={image}
           onChange={(e) => setImage(e.target.value)}
         />
@@ -69,10 +86,18 @@ function NewPost(props){
             value={body}
             onChange={(e) => setBody(e.target.value)}
           />
+          topics:
+          <div>
+            {addedTopics.split(',').map((topic) => <span> {topic} </span>)}
+          </div>
         <div>
-          <button disabled={!title || !body || body.length > 10000 } className="post-button" type="submit">Post</button>
+        <button disabled={!title || body.length > 10000 } className="post-button" type="submit">Post</button>
         </div>
       </form>
+      add topics:
+      <div className="topic-buttons" >
+        {topics.map((topic) => <AddTopicButton topic={topic} handleTopicInput={handleTopicInput} postTopics={postTopics} />)}
+      </div>
     </div>
     </div>
   );
