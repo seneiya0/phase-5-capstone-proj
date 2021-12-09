@@ -41,6 +41,7 @@ function NavBar(props) {
   }, [])
 
   return (
+    <div className='nav-div'>
     <header id="navbar">
       <NavLink to="/" exact className="app-name" onClick={window.location.reload}> 
           <h1> SaidIt </h1>
@@ -55,7 +56,7 @@ function NavBar(props) {
         <button
           className="login-button"
           style={linkStyles}
-          onClick={props.show}
+          onClick={!props.showForm ? props.show : props.unshow}
         > + post </button>
         <NavLink
           className="login-button"
@@ -81,6 +82,7 @@ function NavBar(props) {
         > Signup </NavLink> 
       </div>)}
     </header>
+    </div>
 );
 }
 

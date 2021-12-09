@@ -86,15 +86,15 @@ function NewPost(props){
             value={body}
             onChange={(e) => setBody(e.target.value)}
           />
-          topics:
+          <h4>topics:</h4>
           <div>
-            {addedTopics.split(',').map((topic) => <span> {topic} </span>)}
+            {addedTopics.split(',').map((topic) => <span> {topic} . </span>)}
           </div>
         <div>
         <button disabled={!title || body.length > 10000 } className="post-button" type="submit">Post</button>
         </div>
       </form>
-      add topics:
+      <h4>add topics: </h4>
       <div className="topic-buttons" >
         {topics.map((topic) => <AddTopicButton topic={topic} handleTopicInput={handleTopicInput} postTopics={postTopics} />)}
       </div>

@@ -10,6 +10,15 @@ function App() {
 
   const [posts, setPosts] = useState([])
   const [currentUser, setCurrentUser] = useState(null)
+  const [showForm, setShowForm] = useState(false)
+
+  function show(){
+    setShowForm(true)
+}
+
+  function unshow(){
+    setShowForm(false)
+  }
 
   useEffect(() => {
     fetch("/posts")
@@ -47,7 +56,7 @@ function App() {
         <Route exact path="/" element={<Homepage currentUser={currentUser} setCurrentUser={setCurrentUser} posts={posts} setPosts={setPosts} addNewPost={addNewPost} deletePost={deletePost} />} ></Route>
         <Route exact path="/login" element={<Login setCurrentUser={setCurrentUser}/>}></Route>
         <Route exact path="/signup" element={<Signup setCurrentUser={setCurrentUser}/>}></Route>
-        <Route exact path="/topics/:name" element={<TopicPage posts={posts} topics={topics} currentUser={currentUser} />}></Route>
+        <Route exact path="/topics/:name" element={<TopicPage posts={posts} topics={topics} currentUser={currentUser} show={show} unshow={unshow} showForm={showForm}/>}></Route>
       </Routes>
     </div>
   );

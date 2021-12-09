@@ -84,11 +84,17 @@ function Post({currentUser, post, deletePost}){
       <h1 className="post-title"> {post.title} </h1>
       {post.image !== null ? 
       <div className='img-and-topics'>
-        <img src={post.image} style={{width: '400px'}} alt=''></img> {post.topics ? post.topics.map(topic => <li key={topic.id}><Link className = 'post-topic' to={`/topics/${topic.name}`}> {topic.name} </Link> </li>) : null}
+        <img src={post.image} style={{width: '400px'}} alt=''></img> 
+        <div>
+          {post.topics ? post.topics.map(topic => <li key={topic.id}><Link className = 'post-topic' to={`/topics/${topic.name}`}>{topic.name} </Link> </li>) : null}
+        </div>
       </div> : null}
       {post.image === null ? 
     <div className='body-and-topics'>
-      <p className='post-body' style={{width: '80%'}}> {post.body} </p> {post.topics ? post.topics.map(topic => <li key={topic.id} ><Link className = 'post-topic' to={`/topics/${topic.name}`}> {topic.name} </Link> </li>) : null} 
+      <p className='post-body' style={{width: '80%'}}> {post.body} </p>
+      <div> 
+        {post.topics ? post.topics.map(topic => <li key={topic.id} ><Link className = 'post-topic' to={`/topics/${topic.name}`}>{topic.name} </Link> </li>) : null} 
+      </div>
     </div> 
     : <p className='post-body'> {post.body}  </p> }
 
